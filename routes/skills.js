@@ -8,5 +8,7 @@ router.get('/', skillsCtrl.index)
 router.get('/new', skillsCtrl.new)
 router.post('/', skillsCtrl.create)
 router.get('/:skillId', skillsCtrl.show)
+router.get('/:skillId/edit', skillsCtrl.edit)
+
 
 export { router }

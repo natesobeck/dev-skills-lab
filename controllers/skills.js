@@ -42,10 +42,23 @@ function show(req, res) {
     res.redirect('/skills')
   })
 }
+function edit(req, res) {
+  Skill.findById(req.params.skillId)
+  .then(skill => {
+    res.render('skills/edit', {
+      skill: skill
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/skills')
+  })
+}
 
 export {
   index,
   newSkill as new,
   create, 
-  show, 
+  show,
+  edit
 }
